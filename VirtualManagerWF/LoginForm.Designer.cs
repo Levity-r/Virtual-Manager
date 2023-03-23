@@ -29,83 +29,90 @@ namespace VirtualManagerWF
         /// </summary>
         private void InitializeComponent()
         {
-            this.Authorization = new System.Windows.Forms.Label();
-            this.LoginTB = new System.Windows.Forms.TextBox();
-            this.PasswordTB = new System.Windows.Forms.TextBox();
-            this.Login = new System.Windows.Forms.Label();
-            this.Password = new System.Windows.Forms.Label();
-            this.Sinhup = new System.Windows.Forms.Button();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.textBoxLogin = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.buttonLog_in = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Authorization
+            // textBoxPassword
             // 
-            this.Authorization.AutoSize = true;
-            this.Authorization.Font = new System.Drawing.Font("Unispace", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Authorization.Location = new System.Drawing.Point(505, 115);
-            this.Authorization.Name = "Authorization";
-            this.Authorization.Size = new System.Drawing.Size(256, 42);
-            this.Authorization.TabIndex = 0;
-            this.Authorization.Text = "Авторизация";
+            this.textBoxPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.textBoxPassword.Location = new System.Drawing.Point(452, 262);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(181, 20);
+            this.textBoxPassword.TabIndex = 0;
             // 
-            // LoginTB
+            // textBoxLogin
             // 
-            this.LoginTB.Location = new System.Drawing.Point(491, 283);
-            this.LoginTB.Name = "LoginTB";
-            this.LoginTB.Size = new System.Drawing.Size(284, 20);
-            this.LoginTB.TabIndex = 1;
+            this.textBoxLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.textBoxLogin.Location = new System.Drawing.Point(452, 220);
+            this.textBoxLogin.Name = "textBoxLogin";
+            this.textBoxLogin.Size = new System.Drawing.Size(181, 20);
+            this.textBoxLogin.TabIndex = 1;
             // 
-            // PasswordTB
+            // label1
             // 
-            this.PasswordTB.Location = new System.Drawing.Point(491, 384);
-            this.PasswordTB.Name = "PasswordTB";
-            this.PasswordTB.Size = new System.Drawing.Size(284, 20);
-            this.PasswordTB.TabIndex = 2;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Unispace", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(383, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(312, 42);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "VirtualManager";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // Login
+            // label2
             // 
-            this.Login.AutoSize = true;
-            this.Login.Font = new System.Drawing.Font("Unispace", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Login.Location = new System.Drawing.Point(580, 231);
-            this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(99, 33);
-            this.Login.TabIndex = 3;
-            this.Login.Text = "Логин";
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Unispace", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(332, 215);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 25);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Логин";
             // 
-            // Password
+            // label3
             // 
-            this.Password.AutoSize = true;
-            this.Password.Font = new System.Drawing.Font("Unispace", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Password.Location = new System.Drawing.Point(571, 336);
-            this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(120, 33);
-            this.Password.TabIndex = 4;
-            this.Password.Text = "Пароль";
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Unispace", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(332, 262);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 25);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Пароль";
             // 
-            // Sinhup
+            // buttonLog_in
             // 
-            this.Sinhup.Font = new System.Drawing.Font("Unispace", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sinhup.Location = new System.Drawing.Point(551, 433);
-            this.Sinhup.Name = "Sinhup";
-            this.Sinhup.Size = new System.Drawing.Size(165, 43);
-            this.Sinhup.TabIndex = 5;
-            this.Sinhup.Text = "Войти";
-            this.Sinhup.UseVisualStyleBackColor = true;
-            this.Sinhup.Click += new System.EventHandler(this.Sinhup_Click);
+            this.buttonLog_in.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonLog_in.Font = new System.Drawing.Font("Unispace", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLog_in.Location = new System.Drawing.Point(482, 303);
+            this.buttonLog_in.Name = "buttonLog_in";
+            this.buttonLog_in.Size = new System.Drawing.Size(123, 41);
+            this.buttonLog_in.TabIndex = 5;
+            this.buttonLog_in.Text = "Войти";
+            this.buttonLog_in.UseVisualStyleBackColor = true;
+            this.buttonLog_in.Click += new System.EventHandler(this.buttonLog_in_Click);
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1274, 642);
-            this.Controls.Add(this.Sinhup);
-            this.Controls.Add(this.Password);
-            this.Controls.Add(this.Login);
-            this.Controls.Add(this.PasswordTB);
-            this.Controls.Add(this.LoginTB);
-            this.Controls.Add(this.Authorization);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1076, 507);
+            this.Controls.Add(this.buttonLog_in);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBoxLogin);
+            this.Controls.Add(this.textBoxPassword);
             this.Name = "LoginForm";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,12 +120,12 @@ namespace VirtualManagerWF
 
         #endregion
 
-        private System.Windows.Forms.Label Authorization;
-        private System.Windows.Forms.TextBox LoginTB;
-        private System.Windows.Forms.TextBox PasswordTB;
-        private System.Windows.Forms.Label Login;
-        private System.Windows.Forms.Label Password;
-        private System.Windows.Forms.Button Sinhup;
+        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.TextBox textBoxLogin;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button buttonLog_in;
     }
 }
 

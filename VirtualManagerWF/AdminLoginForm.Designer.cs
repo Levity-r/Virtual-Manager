@@ -29,15 +29,19 @@ namespace VirtualManagerWF
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.настройкиСетиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиДоступаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.демонстрацияЭкранаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.мониторингПользователейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnListen = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip2.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip2
@@ -47,7 +51,7 @@ namespace VirtualManagerWF
             this.usersToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(821, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(923, 24);
             this.menuStrip2.TabIndex = 2;
             this.menuStrip2.Text = "menuStrip2";
             this.menuStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip2_ItemClicked);
@@ -55,7 +59,6 @@ namespace VirtualManagerWF
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.настройкиСетиToolStripMenuItem,
             this.настройкиДоступаToolStripMenuItem,
             this.выходToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
@@ -63,17 +66,19 @@ namespace VirtualManagerWF
             this.settingsToolStripMenuItem.Text = "Настройки";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
-            // настройкиСетиToolStripMenuItem
-            // 
-            this.настройкиСетиToolStripMenuItem.Name = "настройкиСетиToolStripMenuItem";
-            this.настройкиСетиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.настройкиСетиToolStripMenuItem.Text = "Настройки сети";
-            // 
             // настройкиДоступаToolStripMenuItem
             // 
             this.настройкиДоступаToolStripMenuItem.Name = "настройкиДоступаToolStripMenuItem";
             this.настройкиДоступаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.настройкиДоступаToolStripMenuItem.Text = "Настройки доступа";
+            this.настройкиДоступаToolStripMenuItem.Click += new System.EventHandler(this.настройкиДоступаToolStripMenuItem_Click);
+            // 
+            // выходToolStripMenuItem
+            // 
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
             // usersToolStripMenuItem
             // 
@@ -95,25 +100,47 @@ namespace VirtualManagerWF
             // мониторингПользователейToolStripMenuItem
             // 
             this.мониторингПользователейToolStripMenuItem.Name = "мониторингПользователейToolStripMenuItem";
-            this.мониторингПользователейToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
+            this.мониторингПользователейToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.мониторингПользователейToolStripMenuItem.Text = "Мониторинг пользователей";
+            this.мониторингПользователейToolStripMenuItem.Click += new System.EventHandler(this.мониторингПользователейToolStripMenuItem_Click);
             // 
-            // выходToolStripMenuItem
+            // flowLayoutPanel1
             // 
-            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.выходToolStripMenuItem.Text = "Выход";
+            this.flowLayoutPanel1.Controls.Add(this.btnListen);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 27);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(923, 480);
+            this.flowLayoutPanel1.TabIndex = 3;
+            // 
+            // btnListen
+            // 
+            this.btnListen.Location = new System.Drawing.Point(3, 3);
+            this.btnListen.Name = "btnListen";
+            this.btnListen.Size = new System.Drawing.Size(75, 23);
+            this.btnListen.TabIndex = 0;
+            this.btnListen.Text = "Listen";
+            this.btnListen.UseVisualStyleBackColor = true;
+            this.btnListen.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // AdminLoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(821, 394);
+            this.ClientSize = new System.Drawing.Size(923, 506);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.menuStrip2);
             this.Name = "AdminLoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminLogin";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminLoginForm_FormClosed);
+            this.Load += new System.EventHandler(this.AdminLoginForm_Load);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,11 +149,13 @@ namespace VirtualManagerWF
         #endregion
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem настройкиСетиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem настройкиДоступаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem демонстрацияЭкранаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem мониторингПользователейToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btnListen;
+        private System.Windows.Forms.Timer timer1;
     }
 }
